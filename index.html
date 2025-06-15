@@ -123,6 +123,37 @@
                 height: auto;
                 border-radius: 12px;
             }
+
+        .destruction-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #030f16;
+            color: #fff;
+            font-family: 'Noir', Arial, sans-serif;
+            gap: 40px;
+        }
+
+        .destruction-gif {
+            flex: 1 1 400px;
+            text-align: left;
+        }
+
+            .destruction-gif img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 12px;
+            }
+
+        .destruction-text {
+            flex: 1 1 400px;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            text-align: right;
+        }
+
     </style>
 </head>
 <body>
@@ -151,6 +182,15 @@
         </div>
         <div class="controls-gif">
             <img src="images/SmashGIF.gif" alt="Gameplay GIF" />
+        </div>
+    </div>
+
+    <div class="destruction-section">
+        <div class="destruction-gif">
+            <img src="images/DestructionGIF.gif" alt="Destruction Gameplay GIF" />
+        </div>
+        <div class="destruction-text">
+            <p><strong>Smash your way through</strong> breakable environments where destruction is rewarded</p>
         </div>
     </div>
 
