@@ -8,6 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #030f16;
         }
 
         .banner {
@@ -20,17 +21,15 @@
             height: 40px;
         }
 
-        /* Instagram icon on top left */
         .instagram-icon {
             position: absolute;
             left: 20px;
-            top: 66%;
+            top: 50%;
             transform: translateY(-50%);
             width: 30px;
             height: 30px;
         }
 
-        /* Container for nav links */
         .nav-links {
             position: absolute;
             left: 20%;
@@ -78,6 +77,23 @@
             color: #fff;
             text-decoration: none;
         }
+
+        .game-description {
+            background-color: #111;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-family: 'Noir', Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            .game-description {
+                font-size: 1.5rem;
+                padding: 60px 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,6 +110,12 @@
 
     <div class="keyart-container">
         <img src="images/KeyArt_HomePage.png" alt="Smash 'N Grab Key Art" />
+    </div>
+
+    <div class="game-description">
+        <p>
+            <strong>Smash ‘N Grab</strong> is an adrenaline-fuelled, destructive beat ’em up starring Smash and Grab—a robot and raccoon duo pulling off explosive heists. Tethered by a rope, they loot everything in sight!
+        </p>
     </div>
 
 </body>
