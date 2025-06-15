@@ -94,6 +94,35 @@
                 padding: 60px 80px;
             }
         }
+
+        .controls-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #030f16;
+            color: #fff;
+            font-family: 'Noir', Arial, sans-serif;
+            gap: 40px;
+        }
+
+        .controls-text {
+            flex: 1 1 400px;
+            font-size: 1.4rem;
+            line-height: 1.6;
+        }
+
+        .controls-gif {
+            flex: 1 1 400px;
+            text-align: right;
+        }
+
+            .controls-gif img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 12px;
+            }
     </style>
 </head>
 <body>
@@ -114,6 +143,15 @@
 
     <div class="description-banner">
         <img src="images/DescriptionBanner.png" alt="Smash 'N Grab Description Banner" style="width: 100%; height: auto; display: block;" />
+    </div>
+
+    <div class="controls-section">
+        <div class="controls-text">
+            <p><strong>Control a chaotic duo</strong>—move Smash with the left stick, throw Grab with the right</p>
+        </div>
+        <div class="controls-gif">
+            <img src="images/gameplay.gif" alt="Gameplay GIF" />
+        </div>
     </div>
 
 </body>
