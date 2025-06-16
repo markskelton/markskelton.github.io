@@ -54,22 +54,28 @@
                 }
 
         .press-header {
-            display: flex;
-            align-items: center;
-            gap: 40px;
             padding: 60px 40px 20px 40px;
+            text-align: left;
         }
-
-            .press-header img {
-                max-width: 200px;
-                height: auto;
-            }
 
         .press-title {
             font-family: 'Noir', Arial, sans-serif;
             font-size: 2.5rem;
             font-weight: 500;
+            margin-bottom: 40px;
         }
+
+        .press-logo {
+            display: flex;
+            justify-content: center;
+        }
+
+            .press-logo img {
+                width: 100%;
+                max-width: 600px; /* or whatever size you want */
+                height: auto;
+                display: block;
+            }
 
         @font-face {
             font-family: 'Noir';
@@ -99,8 +105,10 @@
     </div>
 
     <div class="press-header">
-        <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="SLAP-BANG! Digital Logo" />
         <h1 class="press-title">PRESS KIT</h1>
+        <div class="press-logo">
+            <img src="images/CompanyLogo.png" alt="SLAP-BANG! Digital Logo" />
+        </div>
     </div>
 
 </body>
