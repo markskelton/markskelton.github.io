@@ -268,16 +268,40 @@
         </div>
 
         <div class="press-resources">
+            <!-- Downloadable Logos -->
             <div class="resource-section">
                 <h2 class="resource-title">Downloadable Logos</h2>
-                <div class="resource-grid">
+                <div class="resource-grid" id="logos">
                     <div class="resource-item">
                         <img src="images/SmashNGrabLogo_TransparentBackground.png" alt="Game Logo" />
-                        <a href="images/SmashNGrabLogo_TransparentBackground.png" download>Download Logo</a>
+                        <a href="images/SmashNGrabLogo_TransparentBackground.png" download>Download</a>
                     </div>
                     <div class="resource-item">
                         <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="Studio Logo" />
-                        <a href="images/SlapBangDigitalLogo_TransparentBackground.png" download>Download Studio Logo</a>
+                        <a href="images/SlapBangDigitalLogo_TransparentBackground.png" download>Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Art Section -->
+            <div class="resource-section">
+                <h2 class="resource-title">Key Art</h2>
+                <div class="resource-grid" id="keyart">
+                    <div class="resource-item">
+                        <img src="images/KeyArt_16by9_WithTitle.png" alt="Key Art 1" />
+                        <a href="images/KeyArt_16by9_WithTitle.png" download>Download</a>
+                    </div>
+                    <div class="resource-item">
+                        <img src="images/KeyArt_16by9_NoTitle.png" alt="Key Art 2" />
+                        <a href="images/KeyArt_16by9_NoTitle.png" download>Download</a>
+                    </div>
+                    <div class="resource-item">
+                        <img src="images/KeyArt_WithTitle.png" alt="Key Art 3" />
+                        <a href="images/KeyArt_WithTitle.png" download>Download</a>
+                    </div>
+                    <div class="resource-item">
+                        <img src="images/KeyArt_NoTitle.png" alt="Key Art 4" />
+                        <a href="images/KeyArt_NoTitle.png" download>Download</a>
                     </div>
                 </div>
             </div>
@@ -300,6 +324,7 @@
     <!-- Overlay Gallery -->
     <div id="gallery-overlay">
         <button id="gallery-close">&times;</button>
+        <a id="gallery-download" href="#" download style="color: #fff; margin-bottom: 10px;">Download</a>
         <div class="gallery-nav">
             <button class="gallery-arrow" id="gallery-prev">&#8592;</button>
             <img id="gallery-image" src="" alt="Large Screenshot" />
@@ -309,28 +334,38 @@
 
     <script>
         (function () {
-            const images = [
+            const galleryData = [
+                // Screenshots
                 "images/SmashNGrab_GameplayScreenshot_1.png",
                 "images/SmashNGrab_GameplayScreenshot_2.png",
                 "images/SmashNGrab_GameplayScreenshot_3.png",
                 "images/SmashNGrab_GameplayScreenshot_4.png",
                 "images/SmashNGrab_GameplayScreenshot_5.png",
                 "images/SmashNGrab_GameplayScreenshot_6.png",
-                "images/SmashNGrab_GameplayScreenshot_7.png"
+                "images/SmashNGrab_GameplayScreenshot_7.png",
+                // Key Art
+                "images/KeyArt_16by9_WithTitle.png",
+                "images/KeyArt_16by9_NoTitle.png",
+                "images/KeyArt_WithTitle.png",
+                "images/KeyArt_NoTitle.png",
+                // Logos
+                "images/SmashNGrabLogo_TransparentBackground.png",
+                "images/SlapBangDigitalLogo_TransparentBackground.png"
             ];
 
             let currentIndex = 0;
 
             const overlay = document.getElementById('gallery-overlay');
             const galleryImage = document.getElementById('gallery-image');
+            const galleryDownload = document.getElementById('gallery-download');
             const prevBtn = document.getElementById('gallery-prev');
             const nextBtn = document.getElementById('gallery-next');
             const closeBtn = document.getElementById('gallery-close');
-            const thumbnails = document.querySelectorAll('#thumbnails img');
 
             function showOverlay(index) {
                 currentIndex = index;
-                galleryImage.src = images[currentIndex];
+                galleryImage.src = galleryData[currentIndex];
+                galleryDownload.href = galleryData[currentIndex];
                 overlay.classList.add('active');
             }
 
@@ -339,13 +374,22 @@
             }
 
             function showImage(index) {
-                currentIndex = (index + images.length) % images.length;
-                galleryImage.src = images[currentIndex];
+                currentIndex = (index + galleryData.length) % galleryData.length;
+                galleryImage.src = galleryData[currentIndex];
+                galleryDownload.href = galleryData[currentIndex];
             }
 
-            thumbnails.forEach((thumb, index) => {
-                thumb.addEventListener('click', () => showOverlay(index));
-            });
+            function attachListeners(selectorBase, startIndexOffset) {
+                const images = document.querySelectorAll(selectorBase);
+                images.forEach((img, i) => {
+                    img.addEventListener('click', () => showOverlay(i + startIndexOffset));
+                });
+            }
+
+            // Attach click listeners to each section
+            attachListeners('#thumbnails img', 0);
+            attachListeners('#keyart img', 7);
+            attachListeners('#logos img', 11);
 
             prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
             nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
@@ -357,25 +401,22 @@
 
             document.addEventListener('keydown', (e) => {
                 if (!overlay.classList.contains('active')) return;
-
                 if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
                 else if (e.key === 'ArrowRight') showImage(currentIndex + 1);
                 else if (e.key === 'Escape') hideOverlay();
             });
 
+            // Swipe support
             let touchStartX = 0;
-            let touchEndX = 0;
-
             galleryImage.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
             });
-
             galleryImage.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
+                let touchEndX = e.changedTouches[0].screenX;
                 const diff = touchStartX - touchEndX;
                 if (Math.abs(diff) > 50) {
-                    if (diff > 0) showImage(currentIndex + 1); // swipe left
-                    else showImage(currentIndex - 1); // swipe right
+                    if (diff > 0) showImage(currentIndex + 1);
+                    else showImage(currentIndex - 1);
                 }
             });
         })();
