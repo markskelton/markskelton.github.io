@@ -56,3 +56,91 @@
         @font-face {
             font-family: 'Noir';
             src: url('fonts/Noir_regular.otf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Noir';
+            src: url('fonts/Noir_medium.otf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .press-header {
+            padding: 60px 40px 0 40px;
+        }
+
+        .press-title {
+            font-family: 'Noir', Arial, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .press-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-top: 20px;
+        }
+
+        .press-column {
+            flex: 1 1 45%;
+            text-align: center;
+        }
+
+        .logo-image {
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .column-title {
+            font-family: 'Noir', Arial, sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Banner -->
+    <div class="banner">
+        <a href="https://instagram.com/smashngrabgame" target="_blank">
+            <img src="images/Instagram_Glyph_White.png" alt="Instagram" class="instagram-icon" />
+        </a>
+        <nav class="nav-links">
+            <a href="/">HOME</a>
+            <a href="/press">PRESS</a>
+        </nav>
+    </div>
+
+    <!-- Press Content -->
+    <div class="press-header">
+        <h1 class="press-title">PRESS KIT</h1>
+
+        <div class="press-columns">
+            <!-- Studio Info Column -->
+            <div class="press-column">
+                <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="SLAP-BANG! Digital Logo" class="logo-image" />
+                <h2 class="column-title">Studio Info</h2>
+                <!-- Add studio info content here -->
+            </div>
+
+            <!-- Game Info Column -->
+            <div class="press-column">
+                <img src="images/SmashNGrabLogo_TransparentBackground.png" alt="Smash 'N Grab Logo" class="logo-image" />
+                <h2 class="column-title">Game Info</h2>
+                <!-- Add game info content here -->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
