@@ -120,6 +120,60 @@
             margin: 0 auto;
             font-family: 'Noir', Arial, sans-serif;
         }
+
+        .divider {
+            width: 2px;
+            background-color: white;
+            height: 100%;
+            margin: 0 30px;
+        }
+
+        .press-resources {
+            margin-top: 80px;
+            padding: 0 40px;
+        }
+
+        .resource-section {
+            margin-bottom: 60px;
+        }
+
+        .resource-title {
+            font-family: 'Noir', Arial, sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .resource-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .resource-item {
+            width: 200px;
+            text-align: center;
+        }
+
+            .resource-item img {
+                width: 100%;
+                height: auto;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+            }
+
+            .resource-item a {
+                color: #fff;
+                text-decoration: none;
+                display: inline-block;
+                margin-top: 8px;
+                font-size: 0.95rem;
+            }
+
+                .resource-item a:hover {
+                    text-decoration: underline;
+                }
     </style>
 </head>
 <body>
@@ -162,6 +216,9 @@
                 </div>
             </div>
 
+            <!-- Divider -->
+            <div class="divider"></div>
+
             <!-- Game Info Column -->
             <div class="press-column">
                 <img src="images/SmashNGrabLogo_TransparentBackground.png" alt="Smash 'N Grab Logo" class="logo-image" />
@@ -172,6 +229,42 @@
                     </p>
                 </div>
             </div>
+        </div>
+
+        <!-- Press Assets Section -->
+        <div class="press-resources">
+
+            <!-- Logos -->
+            <div class="resource-section">
+                <h2 class="resource-title">Downloadable Logos</h2>
+                <div class="resource-grid">
+                    <div class="resource-item">
+                        <img src="images/SmashNGrabLogo_TransparentBackground.png" alt="Game Logo" />
+                        <a href="images/SmashNGrabLogo_TransparentBackground.png" download>Download Logo</a>
+                    </div>
+                    <div class="resource-item">
+                        <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="Studio Logo" />
+                        <a href="images/SlapBangDigitalLogo_TransparentBackground.png" download>Download Studio Logo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshots -->
+            <div class="resource-section">
+                <h2 class="resource-title">Gameplay Screenshots</h2>
+                <div class="resource-grid">
+                    <div class="resource-item">
+                        <img src="images/screenshot1.jpg" alt="Screenshot 1" />
+                        <a href="images/screenshot1.jpg" download>Download Screenshot</a>
+                    </div>
+                    <div class="resource-item">
+                        <img src="images/screenshot2.jpg" alt="Screenshot 2" />
+                        <a href="images/screenshot2.jpg" download>Download Screenshot</a>
+                    </div>
+                    <!-- Add more screenshots as needed -->
+                </div>
+            </div>
+
         </div>
     </div>
 
