@@ -154,6 +154,35 @@
             text-align: right;
         }
 
+        .destruction-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #030f16;
+            color: #fff;
+            font-family: 'Noir', Arial, sans-serif;
+            gap: 40px;
+        }
+
+        .destruction-text {
+            flex: 1 1 400px;
+            font-size: 1.4rem;
+            line-height: 1.6;
+        }
+
+        .destruction-video {
+            flex: 1 1 400px;
+            text-align: right;
+        }
+
+            .destruction-video video {
+                max-width: 100%;
+                height: auto;
+                border-radius: 12px;
+            }
+
     </style>
 </head>
 <body>
@@ -196,7 +225,19 @@
             </video>
         </div>
         <div class="moves-text">
-            <p><strong>Tethered by a rope,</strong> Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment.</p>
+            <p><strong>Tethered by a rope</strong>, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment.</p>
+        </div>
+    </div>
+
+    <div class="destruction-section">
+        <div class="destruction-text">
+            <p><strong>Smash</strong> your way through breakable environments where destruction is rewarded.</p>
+        </div>
+        <div class="destruction-video">
+            <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 12px;">
+                <source src="videos/DestructionClip.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
