@@ -335,6 +335,16 @@
     <script>
         (function () {
             const galleryData = [
+                // Logos
+                "images/SmashNGrabLogo_TransparentBackground.png",
+                "images/SlapBangDigitalLogo_TransparentBackground.png",
+
+                // Key Art
+                "images/KeyArt_16by9_WithTitle.png",
+                "images/KeyArt_16by9_NoTitle.png",
+                "images/KeyArt_WithTitle.png",
+                "images/KeyArt_NoTitle.png",
+
                 // Screenshots
                 "images/SmashNGrab_GameplayScreenshot_1.png",
                 "images/SmashNGrab_GameplayScreenshot_2.png",
@@ -342,15 +352,7 @@
                 "images/SmashNGrab_GameplayScreenshot_4.png",
                 "images/SmashNGrab_GameplayScreenshot_5.png",
                 "images/SmashNGrab_GameplayScreenshot_6.png",
-                "images/SmashNGrab_GameplayScreenshot_7.png",
-                // Key Art
-                "images/KeyArt_16by9_WithTitle.png",
-                "images/KeyArt_16by9_NoTitle.png",
-                "images/KeyArt_WithTitle.png",
-                "images/KeyArt_NoTitle.png",
-                // Logos
-                "images/SmashNGrabLogo_TransparentBackground.png",
-                "images/SlapBangDigitalLogo_TransparentBackground.png"
+                "images/SmashNGrab_GameplayScreenshot_7.png"
             ];
 
             let currentIndex = 0;
@@ -386,10 +388,10 @@
                 });
             }
 
-            // Attach click listeners to each section
-            attachListeners('#thumbnails img', 0);
-            attachListeners('#keyart img', 7);
-            attachListeners('#logos img', 11);
+            // Attach click listeners in updated order
+            attachListeners('#logos img', 0);           // Logos: 0–1
+            attachListeners('#keyart img', 2);          // Key Art: 2–5
+            attachListeners('#thumbnails img', 6);      // Screenshots: 6–12
 
             prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
             nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
