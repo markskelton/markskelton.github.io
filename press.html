@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SLAP-BANG! Digital – Press Kit</title>
-    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <title>Press Kit – SLAP-BANG! Digital</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <style>
         body {
             margin: 0;
@@ -53,30 +53,6 @@
                     text-decoration: underline;
                 }
 
-        .press-header {
-            padding: 60px 40px 20px 40px;
-            text-align: left;
-        }
-
-        .press-title {
-            font-family: 'Noir', Arial, sans-serif;
-            font-size: 2.5rem;
-            font-weight: 500;
-            margin-bottom: 40px;
-        }
-
-        .press-logo {
-            display: flex;
-            justify-content: center;
-        }
-
-            .press-logo img {
-                width: 100%;
-                max-width: 600px; /* or whatever size you want */
-                height: auto;
-                display: block;
-            }
-
         @font-face {
             font-family: 'Noir';
             src: url('fonts/Noir_regular.otf') format('truetype');
@@ -90,10 +66,49 @@
             font-weight: 500;
             font-style: normal;
         }
+
+        .press-header {
+            padding: 60px 40px;
+        }
+
+        .press-title {
+            font-family: 'Noir', Arial, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .press-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            justify-content: space-between;
+        }
+
+        .press-column {
+            flex: 1 1 45%;
+            text-align: center;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .column-title {
+            font-family: 'Noir', Arial, sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Banner -->
     <div class="banner">
         <a href="https://instagram.com/smashngrabgame" target="_blank">
             <img src="images/Instagram_Glyph_White.png" alt="Instagram" class="instagram-icon" />
@@ -104,10 +119,24 @@
         </nav>
     </div>
 
+    <!-- Press Content -->
     <div class="press-header">
         <h1 class="press-title">PRESS KIT</h1>
-        <div class="press-logo">
-            <img src="images/CompanyLogo.png" alt="SLAP-BANG! Digital Logo" />
+
+        <div class="press-columns">
+            <!-- Studio Info Column -->
+            <div class="press-column">
+                <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="SLAP-BANG! Digital Logo" class="logo-image" />
+                <h2 class="column-title">Studio Info</h2>
+                <!-- Add studio info content here -->
+            </div>
+
+            <!-- Game Info Column -->
+            <div class="press-column">
+                <img src="images/GameLogo.png" alt="Smash 'N Grab Logo" class="logo-image" />
+                <h2 class="column-title">Game Info</h2>
+                <!-- Add game info content here -->
+            </div>
         </div>
     </div>
 
