@@ -143,6 +143,7 @@
         .resource-item {
             width: 200px;
             text-align: center;
+            cursor: pointer;
         }
 
             .resource-item img {
@@ -164,22 +165,38 @@
                     text-decoration: underline;
                 }
 
-        /* Gallery Preview Styles */
-        .gallery-preview {
-            display: flex;
+        /* Overlay Gallery Styles */
+        #gallery-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+            #gallery-overlay.active {
+                display: flex;
+            }
+
+        #gallery-image {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+            border: 2px solid #fff;
             margin-bottom: 20px;
         }
 
-            .gallery-preview img {
-                max-width: 80%;
-                max-height: 400px;
-                border-radius: 8px;
-                border: 2px solid #fff;
-                object-fit: contain;
-            }
+        .gallery-nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
 
         .gallery-arrow {
             background-color: transparent;
@@ -199,16 +216,16 @@
                 color: #030f16;
             }
 
-        .resource-grid .resource-item img {
+        #gallery-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            background: none;
+            color: #fff;
+            border: none;
             cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.2s ease;
         }
-
-            .resource-grid .resource-item img.selected,
-            .resource-grid .resource-item img:hover {
-                border-color: #fff;
-            }
     </style>
 </head>
 <body>
@@ -229,46 +246,28 @@
         <h1 class="press-title">PRESS KIT</h1>
 
         <div class="press-columns-wrapper">
-
-            <!-- Studio Info Column -->
             <div class="press-column">
                 <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="SLAP-BANG! Digital Logo" class="logo-image" />
                 <h2 class="column-title">Studio Info</h2>
                 <div class="studio-info">
                     <p>SLAP-BANG! Digital<br />Based in Belfast, Northern Ireland</p>
                     <p>Website: slapbangdigital.com<br />Email: slapbangdigital@gmail.com</p>
-                    <p>
-                        SLAP-BANG! Digital is a Belfast-based independent game studio founded in October 2024 by Mark Skelton. The studio was established with a mission to create bold, visually striking games that are easy to pick up and play, but packed with personality and challenge.
-                    </p>
-                    <p>
-                        At the end of 2024, SLAP-BANG! Digital received prototype funding from NI Screen, which enabled the formation of a small but focused team. Over the following months, the team developed a vertical slice for <em>Smash 'N Grab</em>, the studio’s debut project.
-                    </p>
+                    <p>SLAP-BANG! Digital is a Belfast-based independent game studio founded in October 2024 by Mark Skelton. We create games that are easy to pick up and play, presented with striking visuals, and always designed with fun as the main priority.</p>
                 </div>
             </div>
 
-            <!-- Divider -->
             <div class="divider"></div>
 
-            <!-- Game Info Column -->
             <div class="press-column">
                 <img src="images/SmashNGrabLogo_TransparentBackground.png" alt="Smash 'N Grab Logo" class="logo-image" />
                 <h2 class="column-title">Game Info</h2>
                 <div class="game-info">
-                    <p>
-                        <em>Smash ‘N Grab</em> is an adrenaline-fuelled, destructive beat ’em up that puts you in control of Smash and Grab, a chaotic duo pulling off heists to devastating effect.
-                    </p>
-                    <p>
-                        Smash is a hulking robot out for justice. Grab is a cunning raccoon chasing wealth. Tethered by a rope, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment. Together, they team up to loot everything in sight.
-                    </p>
+                    <p><em>Smash ‘N Grab</em> is an adrenaline-fuelled, destructive beat ’em up where you alternate control between two lovable criminals to loot, smash and brawl your way through highly-stylised security systems. Choose the right character for the job, overcome guards and lasers, and loot each location before backup arrives!</p>
                 </div>
             </div>
-
         </div>
 
-        <!-- Downloadable Assets -->
         <div class="press-resources">
-
-            <!-- Logos -->
             <div class="resource-section">
                 <h2 class="resource-title">Downloadable Logos</h2>
                 <div class="resource-grid">
@@ -280,138 +279,106 @@
                         <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="Studio Logo" />
                         <a href="images/SlapBangDigitalLogo_TransparentBackground.png" download>Download Studio Logo</a>
                     </div>
-                    <div class="resource-item">
-                        <img src="images/SlapBangDigitalLogo_Icon_TransparentBackground.png" alt="Studio Icon" />
-                        <a href="images/SlapBangDigitalLogo_Icon_TransparentBackground.png" download>Download Studio Icon</a>
-                    </div>
                 </div>
             </div>
 
-            <!-- Key Art Section -->
-            <div class="resource-section">
-                <h2 class="resource-title">Key Art</h2>
-                <div class="resource-grid">
-                    <div class="resource-item">
-                        <a href="images/KeyArt_16by9_WithTitle.png" download>
-                            <img src="images/KeyArt_16by9_WithTitle.png" alt="Key Art" />
-                            <p>Download Key Art</p>
-                        </a>
-                    </div>
-                    <div class="resource-item">
-                        <a href="images/KeyArt_16by9_NoTitle.png" download>
-                            <img src="images/KeyArt_16by9_NoTitle.png" alt="Key Art" />
-                            <p>Download Key Art</p>
-                        </a>
-                    </div>
-                    <div class="resource-item">
-                        <a href="images/KeyArt_WithTitle.png" download>
-                            <img src="images/KeyArt_WithTitle.png" alt="Key Art" />
-                            <p>Download Key Art</p>
-                        </a>
-                    </div>
-                    <div class="resource-item">
-                        <a href="images/KeyArt_NoTitle.png" download>
-                            <img src="images/KeyArt_NoTitle.png" alt="Key Art" />
-                            <p>Download Key Art</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gameplay Screenshots with Gallery Preview -->
             <div class="resource-section">
                 <h2 class="resource-title">Gameplay Screenshots</h2>
-
-                <!-- Gallery Preview -->
-                <div class="gallery-preview">
-                    <button class="gallery-arrow" id="prev">&#8592;</button>
-                    <img id="preview-image" src="images/SmashNGrab_GameplayScreenshot_1.png" alt="Screenshot Preview" />
-                    <button class="gallery-arrow" id="next">&#8594;</button>
-                </div>
-
-                <!-- Thumbnails -->
                 <div class="resource-grid" id="thumbnails">
-                    <div class="resource-item">
-                        <img src="images/SmashNGrab_GameplayScreenshot_1.png" alt="Screenshot 1" data-index="0" />
-                        <a href="images/SmashNGrab_GameplayScreenshot_1.png" download>Download Screenshot</a>
-                    </div>
-                    <div class="resource-item">
-                        <img src="images/SmashNGrab_GameplayScreenshot_2.png" alt="Screenshot 2" data-index="1" />
-                        <a href="images/SmashNGrab_GameplayScreenshot_2.png" download>Download Screenshot</a>
-                    </div>
-                    <div class="resource-item">
-                        <img src="images/SmashNGrab_GameplayScreenshot_3.png" alt="Screenshot 3" data-index="2" />
-                        <a href="images/SmashNGrab_GameplayScreenshot_3.png" download>Download Screenshot</a>
-                    </div>
-                    <div class="resource-item">
-                        <img src="images/SmashNGrab_GameplayScreenshot_4.png" alt="Screenshot 4" data-index="3" />
-                        <a href="images/SmashNGrab_GameplayScreenshot_4.png" download>Download Screenshot</a>
-                    </div>
-                    <div class="resource-item">
-                        <img src="images/SmashNGrab_GameplayScreenshot_5.png" alt="Screenshot 5" data-index="4" />
-                        <a href="images/SmashNGrab_GameplayScreenshot_5.png" download>Download Screenshot</a>
-                    </div>
-                    <div class="resource-item">
-                        <img src="images/SmashNGrab_GameplayScreenshot_6.png" alt="Screenshot 6" data-index="5" />
-                        <a href="images/SmashNGrab_GameplayScreenshot_6.png" download>Download Screenshot</a>
-                    </div>
-                    <div class="resource-item">
-                        <img src="images/SmashNGrab_GameplayScreenshot_7.png" alt="Screenshot 7" data-index="6" />
-                        <a href="images/SmashNGrab_GameplayScreenshot_7.png" download>Download Screenshot</a>
-                    </div>
+                    <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_1.png" alt="Screenshot 1" /></div>
+                    <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_2.png" alt="Screenshot 2" /></div>
+                    <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_3.png" alt="Screenshot 3" /></div>
+                    <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_4.png" alt="Screenshot 4" /></div>
+                    <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_5.png" alt="Screenshot 5" /></div>
+                    <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_6.png" alt="Screenshot 6" /></div>
+                    <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_7.png" alt="Screenshot 7" /></div>
                 </div>
             </div>
-
         </div>
+    </div>
 
+    <!-- Overlay Gallery -->
+    <div id="gallery-overlay">
+        <button id="gallery-close">&times;</button>
+        <div class="gallery-nav">
+            <button class="gallery-arrow" id="gallery-prev">&#8592;</button>
+            <img id="gallery-image" src="" alt="Large Screenshot" />
+            <button class="gallery-arrow" id="gallery-next">&#8594;</button>
+        </div>
     </div>
 
     <script>
-    (function() {
-        const images = [
-            "images/SmashNGrab_GameplayScreenshot_1.png",
-            "images/SmashNGrab_GameplayScreenshot_2.png",
-            "images/SmashNGrab_GameplayScreenshot_3.png",
-            "images/SmashNGrab_GameplayScreenshot_4.png",
-            "images/SmashNGrab_GameplayScreenshot_5.png",
-            "images/SmashNGrab_GameplayScreenshot_6.png",
-            "images/SmashNGrab_GameplayScreenshot_7.png"
-        ];
+        (function () {
+            const images = [
+                "images/SmashNGrab_GameplayScreenshot_1.png",
+                "images/SmashNGrab_GameplayScreenshot_2.png",
+                "images/SmashNGrab_GameplayScreenshot_3.png",
+                "images/SmashNGrab_GameplayScreenshot_4.png",
+                "images/SmashNGrab_GameplayScreenshot_5.png",
+                "images/SmashNGrab_GameplayScreenshot_6.png",
+                "images/SmashNGrab_GameplayScreenshot_7.png"
+            ];
 
-        let currentIndex = 0;
-        const previewImage = document.getElementById('preview-image');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
-        const thumbnails = document.querySelectorAll('#thumbnails img');
+            let currentIndex = 0;
 
-        function updatePreview(index) {
-            currentIndex = index;
-            previewImage.src = images[currentIndex];
-            thumbnails.forEach((thumb, i) => {
-                thumb.classList.toggle('selected', i === currentIndex);
+            const overlay = document.getElementById('gallery-overlay');
+            const galleryImage = document.getElementById('gallery-image');
+            const prevBtn = document.getElementById('gallery-prev');
+            const nextBtn = document.getElementById('gallery-next');
+            const closeBtn = document.getElementById('gallery-close');
+            const thumbnails = document.querySelectorAll('#thumbnails img');
+
+            function showOverlay(index) {
+                currentIndex = index;
+                galleryImage.src = images[currentIndex];
+                overlay.classList.add('active');
+            }
+
+            function hideOverlay() {
+                overlay.classList.remove('active');
+            }
+
+            function showImage(index) {
+                currentIndex = (index + images.length) % images.length;
+                galleryImage.src = images[currentIndex];
+            }
+
+            thumbnails.forEach((thumb, index) => {
+                thumb.addEventListener('click', () => showOverlay(index));
             });
-        }
 
-        prevBtn.addEventListener('click', () => {
-            const newIndex = (currentIndex - 1 + images.length) % images.length;
-            updatePreview(newIndex);
-        });
+            prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+            nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+            closeBtn.addEventListener('click', hideOverlay);
 
-        nextBtn.addEventListener('click', () => {
-            const newIndex = (currentIndex + 1) % images.length;
-            updatePreview(newIndex);
-        });
-
-        thumbnails.forEach((thumb, index) => {
-            thumb.addEventListener('click', () => {
-                updatePreview(index);
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) hideOverlay();
             });
-        });
 
-        // Initialize selection on page load
-        updatePreview(0);
-    })();
+            document.addEventListener('keydown', (e) => {
+                if (!overlay.classList.contains('active')) return;
+
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+                else if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+                else if (e.key === 'Escape') hideOverlay();
+            });
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            galleryImage.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            galleryImage.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) showImage(currentIndex + 1); // swipe left
+                    else showImage(currentIndex - 1); // swipe right
+                }
+            });
+        })();
     </script>
-
 </body>
 </html>
