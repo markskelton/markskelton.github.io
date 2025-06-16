@@ -13,6 +13,20 @@
             color: #fff;
         }
 
+        @font-face {
+            font-family: 'Noir';
+            src: url('fonts/Noir_regular.otf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Noir';
+            src: url('fonts/Noir_medium.otf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
         .banner {
             background-color: #030f16;
             color: #fff;
@@ -53,20 +67,6 @@
                     text-decoration: underline;
                 }
 
-        @font-face {
-            font-family: 'Noir';
-            src: url('fonts/Noir_regular.otf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Noir';
-            src: url('fonts/Noir_medium.otf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-        }
-
         .press-header {
             padding: 60px 40px 0 40px;
         }
@@ -75,22 +75,27 @@
             font-family: 'Noir', Arial, sans-serif;
             font-size: 2.5rem;
             font-weight: 500;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
             text-align: left;
         }
 
-        .press-columns {
+        .press-columns-wrapper {
             display: flex;
             flex-wrap: wrap;
-            gap: 60px;
             justify-content: space-between;
-            align-items: flex-start;
-            padding-top: 20px;
+            align-items: stretch;
         }
 
         .press-column {
             flex: 1 1 45%;
-            text-align: center;
+            max-width: 45%;
+            font-family: 'Noir', Arial, sans-serif;
+        }
+
+        .divider {
+            width: 2px;
+            background-color: white;
+            margin: 0 2%;
         }
 
         .logo-image {
@@ -100,37 +105,19 @@
         }
 
         .column-title {
-            font-family: 'Noir', Arial, sans-serif;
             font-size: 1.8rem;
             font-weight: 500;
-            color: #fff;
             margin-bottom: 20px;
         }
 
-        .studio-info {
+        .studio-info, .game-info {
             text-align: left;
-            max-width: 500px;
-            margin: 0 auto;
-            font-family: 'Noir', Arial, sans-serif;
-        }
-
-        .game-info {
-            text-align: left;
-            max-width: 500px;
-            margin: 0 auto;
-            font-family: 'Noir', Arial, sans-serif;
-        }
-
-        .divider {
-            width: 2px;
-            background-color: white;
-            height: 100%;
-            margin: 0 30px;
+            line-height: 1.6;
         }
 
         .press-resources {
             margin-top: 80px;
-            padding: 0 40px;
+            padding: 0 40px 80px 40px;
         }
 
         .resource-section {
@@ -142,7 +129,6 @@
             font-size: 1.8rem;
             font-weight: 500;
             margin-bottom: 20px;
-            color: #fff;
         }
 
         .resource-grid {
@@ -193,20 +179,15 @@
     <div class="press-header">
         <h1 class="press-title">PRESS KIT</h1>
 
-        <div class="press-columns">
+        <div class="press-columns-wrapper">
+
             <!-- Studio Info Column -->
             <div class="press-column">
                 <img src="images/SlapBangDigitalLogo_TransparentBackground.png" alt="SLAP-BANG! Digital Logo" class="logo-image" />
                 <h2 class="column-title">Studio Info</h2>
                 <div class="studio-info">
-                    <p>
-                        SLAP-BANG! Digital<br />
-                        Based in Belfast, Northern Ireland
-                    </p>
-                    <p>
-                        Website: slapbangdigital.com<br />
-                        Email: slapbangdigital@gmail.com
-                    </p>
+                    <p>SLAP-BANG! Digital<br />Based in Belfast, Northern Ireland</p>
+                    <p>Website: slapbangdigital.com<br />Email: slapbangdigital@gmail.com</p>
                     <p>
                         SLAP-BANG! Digital is a Belfast-based independent game studio founded in October 2024 by Mark Skelton. The studio was established with a mission to create bold, visually striking games that are easy to pick up and play, but packed with personality and challenge.
                     </p>
@@ -225,13 +206,17 @@
                 <h2 class="column-title">Game Info</h2>
                 <div class="game-info">
                     <p>
-                        <em>Smash ‘N Grab</em> is an adrenaline-fuelled, destructive beat ’em up that puts you in control of Smash and Grab, a chaotic duo pulling off heists to devastating effect. Smash is a hulking robot out for justice. Grab is a cunning raccoon chasing wealth. Tethered by a rope, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment. Together, they team up to loot everything in sight.
+                        <em>Smash ‘N Grab</em> is an adrenaline-fuelled, destructive beat ’em up that puts you in control of Smash and Grab, a chaotic duo pulling off heists to devastating effect.
+                    </p>
+                    <p>
+                        Smash is a hulking robot out for justice. Grab is a cunning raccoon chasing wealth. Tethered by a rope, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment. Together, they team up to loot everything in sight.
                     </p>
                 </div>
             </div>
+
         </div>
 
-        <!-- Press Assets Section -->
+        <!-- Downloadable Assets -->
         <div class="press-resources">
 
             <!-- Logos -->
@@ -261,12 +246,12 @@
                         <img src="images/screenshot2.jpg" alt="Screenshot 2" />
                         <a href="images/screenshot2.jpg" download>Download Screenshot</a>
                     </div>
-                    <!-- Add more screenshots as needed -->
+                    <!-- Add more as needed -->
                 </div>
             </div>
 
         </div>
-    </div>
 
+    </div>
 </body>
 </html>
