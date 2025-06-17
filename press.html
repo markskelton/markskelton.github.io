@@ -76,8 +76,13 @@
             font-family: 'Noir', Arial, sans-serif;
             font-size: 2.5rem;
             font-weight: 500;
-            /*margin-bottom: 40px;*/
             text-align: left;
+        }
+
+        .press-content {
+            max-width: 1000px; /* or 960px, 900px etc. */
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .press-columns-wrapper {
@@ -85,13 +90,13 @@
             justify-content: space-between;
             align-items: flex-start;
             gap: 40px;
-            /*margin-top: 40px;*/
+            flex-wrap: wrap; /* optional for responsiveness */
         }
 
         .press-column {
             font-family: 'Noir', Arial, sans-serif;
             flex: 1;
-            max-width: 50%;
+            min-width: 300px;
         }
 
         .column-title {
@@ -292,6 +297,7 @@
     </div>
 
     <!-- Press Content -->
+    <div class="press-content">
     <div class="press-header">
         <h1 class="press-title">PRESS KIT</h1>
     </div>
@@ -325,6 +331,7 @@
                 </p>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="press-resources">
