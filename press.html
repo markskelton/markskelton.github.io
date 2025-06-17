@@ -82,15 +82,21 @@
 
         .press-columns-wrapper {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: stretch;
+            align-items: flex-start; /* Ensures top alignment of both columns */
+            gap: 40px; /* Optional spacing between columns */
         }
 
         .press-column {
-            flex: 1 1 45%;
-            max-width: 45%;
-            font-family: 'Noir', Arial, sans-serif;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-image {
+            max-width: 240px;
+            height: auto;
+            margin-bottom: 20px; /* Consistent spacing below both logos */
         }
 
         .divider {
@@ -99,13 +105,6 @@
             margin: 0 2%;
             height: 100%;
             align-self: stretch;
-        }
-
-        .logo-image {
-            max-width: 50%;
-            height: auto;
-            margin: 0 auto 20px auto;
-            display: block;
         }
 
         .column-title {
