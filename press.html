@@ -69,7 +69,7 @@
                 }
 
         .press-header {
-            padding: 0 40px 0 20px;
+            padding: 20px 40px 0 20px;
         }
 
         .press-title {
@@ -82,14 +82,25 @@
 
         .press-columns-wrapper {
             display: flex;
+            justify-content: space-between;
             align-items: flex-start;
             gap: 40px;
+            margin-top: 40px;
         }
 
         .press-column {
             flex: 1;
-            display: flex;
-            flex-direction: column;
+        }
+
+        .column-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 2px;
+            background-color: #ccc;
+            margin: 0 20px;
         }
 
         .logo-wrapper {
@@ -112,9 +123,9 @@
         }
 
         .column-title {
-            font-size: 24px;
-            margin: 0 0 20px 0;
-            padding: 0;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
         }
 
         .studio-info, .game-info {
