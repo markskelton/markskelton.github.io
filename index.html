@@ -67,36 +67,46 @@
             position: absolute;
             top: 20px;
             left: 20px;
+            right: 20px; /* Needed to stretch the full width */
             display: flex;
-            gap: 20px;
-            font-family: Noir, Arial, sans-serif;
-            font-weight: 400;
+            justify-content: space-between;
+            align-items: baseline;
+            font-family: 'Noir Pro', sans-serif;
+            font-size: 1.2rem;
         }
 
-            .overlay-nav a {
-                color: #ffc335;
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 1.2rem;
-                padding: 8px 12px;
-                border-radius: 4px;
-                transition: opacity 0.3s;
+        .nav-left,
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: baseline;
+        }
+
+        .overlay-nav a {
+            color: #ffc335;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+            display: inline-flex;
+            align-items: baseline;
+        }
+
+            .overlay-nav a:hover {
+                opacity: 0.7;
             }
 
-                .overlay-nav a:hover {
-                    opacity: 0.7;
-                }
+        .instagram-link {
+            padding: 0;
+        }
 
-            .overlay-nav .instagram-link {
-                display: flex;
-                padding: 0;
+            .instagram-link img {
+                height: 1.2rem;
+                width: auto;
+                display: inline-block;
+                vertical-align: baseline;
             }
-
-                .overlay-nav .instagram-link img {
-                    height: 1.8rem;
-                    width: auto;
-                    display: block;
-                }
 
         @font-face {
             font-family: 'Noir';
@@ -264,16 +274,17 @@
         </nav>
     </div>-->
 
-    <div class="keyart-container">
-        <img src="images/KeyArt_HomePage.png" alt="Smash 'N Grab Key Art" />
-        <nav class="overlay-nav">
+    <nav class="overlay-nav">
+        <div class="nav-left">
             <a href="index.html">HOME</a>
-            <a href="press.html">PRESS</a>
-            <a href="https://www.instagram.com/smashngrabgame" target="_blank" class="instagram-link">
-                <img src="images/Instagram_Glyph_Yellow.png" alt="Instagram" />
+            <a href="press-kit.html">PRESS</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" class="instagram-link">
+                <img src="images/Instagram_Glyph_White.png" alt="Instagram" />
             </a>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
     <div class="description-banner">
         <img src="images/DescriptionBanner.png" alt="Smash 'N Grab Description Banner" style="width: 100%; height: auto; display: block;" />
