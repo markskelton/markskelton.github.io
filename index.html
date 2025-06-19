@@ -52,11 +52,40 @@
                     text-decoration: underline;
                 }
 
-        .keyart-container img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .keyart-container {
+            position: relative;
+            display: inline-block;
         }
+
+            .keyart-container img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+        .overlay-nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px;
+            font-family: Noir;
+        }
+
+            .overlay-nav a {
+                color: #ffc335;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.2rem;
+                background-color: rgba(0, 0, 0, 0.6);
+                padding: 8px 12px;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+
+                .overlay-nav a:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
 
         @font-face {
             font-family: 'Noir';
@@ -226,6 +255,10 @@
 
     <div class="keyart-container">
         <img src="images/KeyArt_HomePage.png" alt="Smash 'N Grab Key Art" />
+        <nav class="overlay-nav">
+            <a href="index.html">HOME</a>
+            <a href="press-kit.html">PRESS</a>
+        </nav>
     </div>
 
     <div class="description-banner">
@@ -268,11 +301,11 @@
         </div>
     </div>
 
-    <footer class="site-footer">
+    <!--<footer class="site-footer">
         <div class="footer-content">
             <img src="images/SlapBangDigital_Logo.png" alt="SLAP-BANG! Digital Logo" class="footer-logo" />
         </div>
-    </footer>
+    </footer>-->
 
 </body>
 </html>
