@@ -87,11 +87,18 @@
                     opacity: 0.7;
                 }
 
-            .overlay-nav .instagram-link img {
-                height: 1.4rem; /* Match the text height */
-                width: auto; /* Keeps aspect ratio */
-                display: block;
+            .overlay-nav .instagram-link {
+                display: flex;
+                align-items: flex-end;
+                padding: 0;
             }
+
+                .overlay-nav .instagram-link img {
+                    height: 1.4rem;
+                    width: auto;
+                    display: block;
+                    transform: translateY(2px); /* You can fine-tune this value */
+                }
 
         @font-face {
             font-family: 'Noir';
