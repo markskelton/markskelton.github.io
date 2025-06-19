@@ -71,6 +71,7 @@
             gap: 20px;
             font-family: Noir, Arial, sans-serif;
             font-weight: 400;
+            align-items: baseline; /* Align children along text baseline */
         }
 
             .overlay-nav a {
@@ -81,6 +82,7 @@
                 padding: 8px 12px;
                 border-radius: 4px;
                 transition: opacity 0.3s;
+                align-items: baseline; /* Make sure text aligns baseline inside the links */
             }
 
                 .overlay-nav a:hover {
@@ -90,13 +92,14 @@
             .overlay-nav .instagram-link {
                 display: flex;
                 padding: 0;
+                align-items: baseline; /* Make sure text aligns baseline inside the links */
             }
 
                 .overlay-nav .instagram-link img {
                     height: 1.8rem;
                     width: auto;
                     display: block;
-                    transform: translateY(0.6rem); /* Push it downward to align bottoms */
+                    align-items: baseline; /* Make sure text aligns baseline inside the links */
                 }
 
         @font-face {
