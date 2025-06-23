@@ -6,73 +6,11 @@
     <link rel="icon" href="images/android-chrome-512x512.png?" type="image/png" />
     <title>SLAP-BANG! Digital</title>
     <style>
+        /* Base styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #030f16;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        .keyart-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .keyart-container img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .overlay-nav {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            display: flex;
-            gap: 20px;
-            font-family: Noir, Arial, sans-serif;
-            font-weight: 400;
-        }
-
-        .nav-left {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-right {
-            /*display: flex;*/
-            gap: 20px;
-            vertical-align: bottom;
-            float: right;
-        }
-
-        .overlay-nav a {
-            color: #ffc335;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: opacity 0.3s;
-        }
-
-        .overlay-nav a:hover {
-            opacity: 0.7;
-        }
-
-        .overlay-nav .instagram-link {
-            display: flex;
-            padding: 0;
-        }
-
-        .overlay-nav .instagram-link img {
-            height: 1.8rem;
-            width: auto;
-            display: block;
         }
 
         @font-face {
@@ -89,18 +27,67 @@
             font-style: normal;
         }
 
-        .nav-links a {
-            font-family: 'Noir', Arial, sans-serif;
-            font-weight: 500;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
+        /* Key art and navigation */
+        .keyart-container {
+            position: relative;
+            display: inline-block;
         }
 
+            .keyart-container img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+        .overlay-nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            font-family: 'Noir', Arial, sans-serif;
+            font-weight: 400;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .overlay-nav a {
+            color: #ffc335;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+
+            .overlay-nav a:hover {
+                opacity: 0.7;
+            }
+
+        .instagram-link {
+            display: flex;
+            padding: 0;
+        }
+
+            .instagram-link img {
+                height: 1.8rem;
+                width: auto;
+                display: block;
+            }
+
+        /* Game description */
         .game-description {
             background-color: #ffc335;
             color: #fff;
-            padding: 20px 20px;
+            padding: 20px;
             text-align: center;
             font-size: 1.2rem;
             font-family: 'Noir', Arial, sans-serif;
@@ -114,65 +101,9 @@
             }
         }
 
-        .controls-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 40px;
-            background-color: #030f16;
-            color: #fff;
-            font-family: 'Noir', Arial, sans-serif;
-            gap: 40px;
-        }
-
-        .controls-text {
-            flex: 1 1 400px;
-            font-size: 1.4rem;
-            line-height: 1.6;
-        }
-
-        .controls-video {
-            flex: 1 1 400px;
-            text-align: right;
-        }
-
-            .controls-video video {
-                max-width: 100%;
-                height: auto;
-                border-radius: 12px;
-            }
-
-        .moves-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 40px;
-            background-color: #030f16;
-            color: #fff;
-            font-family: 'Noir', Arial, sans-serif;
-            gap: 40px;
-        }
-
-        .moves-video {
-            flex: 1 1 400px;
-            text-align: left;
-        }
-
-            .moves-video video {
-                max-width: 100%;
-                height: auto;
-                border-radius: 12px;
-            }
-
-        .moves-text {
-            flex: 1 1 400px;
-            font-size: 1.4rem;
-            line-height: 1.6;
-            text-align: right;
-        }
-
+        /* Shared section styles */
+        .controls-section,
+        .moves-section,
         .destruction-section {
             display: flex;
             flex-wrap: wrap;
@@ -185,23 +116,38 @@
             gap: 40px;
         }
 
+        .controls-text,
+        .moves-text,
         .destruction-text {
             flex: 1 1 400px;
             font-size: 1.4rem;
             line-height: 1.6;
         }
 
+        .moves-text {
+            text-align: right;
+        }
+
+        .controls-video,
+        .moves-video,
         .destruction-video {
             flex: 1 1 400px;
             text-align: right;
         }
 
+        .moves-video {
+            text-align: left;
+        }
+
+            .controls-video video,
+            .moves-video video,
             .destruction-video video {
                 max-width: 100%;
                 height: auto;
                 border-radius: 12px;
             }
 
+        /* Footer */
         .site-footer {
             background-color: #08223c;
             padding: 10px 20px;
@@ -284,12 +230,5 @@
             </video>
         </div>
     </div>
-
-    <!--<footer class="site-footer">
-        <div class="footer-content">
-            <img src="images/SlapBangDigital_Logo.png" alt="SLAP-BANG! Digital Logo" class="footer-logo" />
-        </div>
-    </footer>-->
-
 </body>
 </html>
