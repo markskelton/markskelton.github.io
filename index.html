@@ -130,28 +130,37 @@
                 color: #ffc335;
             }
 
-        .controls-heading {
+        .controls-heading,
+        .moves-heading,
+        .destruction-heading {
             width: 400px;
             height: 126px;
-
             padding: 0;
             margin: 0;
-
-            background-image: url("images/Heading.png");
             background-size: auto;
             background-repeat: no-repeat;
             background-position: center;
             display: flex;
-            justify-content: center; /* horizontal centering */
-            align-items: center; /* vertical centering */
-
+            justify-content: center;
+            align-items: center;
             text-align: center;
             color: #fff;
             font-family: 'Noir', Arial, sans-serif;
             font-weight: 500;
         }
 
-            .controls-heading h2 {
+        .controls-heading
+        .destruction-heading {
+            background-image: url("images/Heading.png");
+        }
+
+        .moves-heading {
+            background-image: url("images/Heading_Flipped.png");
+        }
+
+            .controls-heading h2,
+            .moves-heading h2,
+            .destruction-heading h2 {
                 padding: 0;
                 margin: 0;
                 font-size: 1.5rem;
@@ -255,12 +264,18 @@
             </video>
         </div>
         <div class="destruction-text">
-            <p><strong>Smash</strong> your way through breakable environments where destruction is rewarded.</p>
+            <div class="destruction-heading">
+                <h2>SMASH</h2>
+            </div>
+            <p>Bulldoze your way through breakable environments where destruction is rewarded.</p>
         </div>
     </div>
 
     <div class="moves-section">
         <div class="moves-text">
+            <div class="moves-heading">
+                <h2>GRAB</h2>
+            </div>
             <p><strong>Tethered by a rope</strong>, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment.</p>
         </div>
         <div class="moves-video">
