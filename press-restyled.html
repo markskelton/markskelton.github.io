@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Press Kit – SLAP-BANG! Digital</title>
+    <link rel="icon" href="images/android-chrome-512x512.png" type="image/png" />
+    <style>
+        @font-face {
+            font-family: 'Noir';
+            src: url('fonts/Noir_regular.otf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: 'Noir';
+            src: url('fonts/Noir_medium.otf') format('truetype');
+            font-weight: 500;
+        }
+
+        :root {
+            --background: #030f16;
+            --foreground: #fff;
+            --accent: #ffcc00;
+            --text-light: #aaa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'Noir', Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+            header img {
+                max-width: 200px;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                color: var(--accent);
+            }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .column {
+            flex: 1 1 300px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+            .gallery img {
+                width: 100%;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.03);
+                }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+            .download-link:hover {
+                text-decoration: underline;
+            }
+
+        .light-text {
+            color: var(--text-light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Lightbox styles */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+            #lightbox img {
+                max-width: 90%;
+                max-height: 80%;
+                border-radius: 8px;
+                border: 2px solid white;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/SlapBangDigital_Logo.png" alt="SLAP-BANG! Digital Logo" />
+        <h1>Press Kit</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Factsheet</h2>
+            <div class="columns">
+                <div class="column">
+                    <p><strong>Developer:</strong><br />SLAP-BANG! Digital<br />Based in Belfast, Northern Ireland</p>
+                    <p><strong>Website:</strong><br />slapbangdigital.com</p>
+                    <p><strong>Email:</strong><br />slapbangdigital@gmail.com</p>
+                </div>
+                <div class="column">
+                    <p><strong>Release date:</strong><br />[Insert release info]</p>
+                    <p><strong>Platforms:</strong><br />[PC, consoles, etc.]</p>
+                    <p><strong>Price:</strong><br />[To be announced]</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Description</h2>
+            <p>[Insert your studio or game description here. This section is ideal for 2–3 short paragraphs describing the concept, tone, and appeal of the game.]</p>
+        </section>
+
+        <section>
+            <h2>History</h2>
+            <p>[How the studio was formed, why you created this game, development highlights, etc.]</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>[Key feature 1]</li>
+                <li>[Key feature 2]</li>
+                <li>[Key feature 3]</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Videos</h2>
+            <p>[Embed trailer links or leave space for YouTube embeds]</p>
+        </section>
+
+        <section>
+            <h2>Images</h2>
+            <div class="gallery">
+                <img src="images/screenshot1.png" alt="Screenshot 1" onclick="openLightbox(this.src)" />
+                <img src="images/screenshot2.png" alt="Screenshot 2" onclick="openLightbox(this.src)" />
+                <!-- Add more screenshots -->
+            </div>
+        </section>
+
+        <section>
+            <h2>Logo & Key Art</h2>
+            <div class="gallery">
+                <div>
+                    <img src="images/logo.png" alt="Game Logo" onclick="openLightbox(this.src)" />
+                    <a class="download-link" href="images/logo.png" download>Download Logo</a>
+                </div>
+                <div>
+                    <img src="images/keyart.png" alt="Key Art" onclick="openLightbox(this.src)" />
+                    <a class="download-link" href="images/keyart.png" download>Download Key Art</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Additional Links</h2>
+            <p><a href="https://www.instagram.com/smashngrabgame" target="_blank" class="download-link">Instagram</a></p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; SLAP-BANG! Digital — All rights reserved
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img src="" alt="Expanded Screenshot" />
+    </div>
+
+    <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.querySelector('img').src = src;
+      lightbox.style.display = 'flex';
+    }
+    </script>
+</body>
+</html>
