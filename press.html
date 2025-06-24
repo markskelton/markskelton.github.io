@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Press Kit – SLAP-BANG! Digital</title>
-    <link rel="icon" href="images/android-chrome-512x512.png?" type="image/png" />
+    <link rel="icon" href="images/android-chrome-512x512.png" type="image/png" />
     <style>
         body {
             margin: 0;
@@ -17,25 +17,21 @@
             font-family: 'Noir';
             src: url('fonts/Noir_regular.otf') format('truetype');
             font-weight: 400;
-            font-style: normal;
         }
 
         @font-face {
             font-family: 'Noir';
             src: url('fonts/Noir_medium.otf') format('truetype');
             font-weight: 500;
-            font-style: normal;
         }
 
         .banner {
             background-color: #08223c;
-            color: #fff;
             padding: 10px 20px;
             display: flex;
             align-items: center;
             position: relative;
             height: 40px;
-            /*border-bottom: 3px solid #02090d;*/
         }
 
         .instagram-icon {
@@ -74,213 +70,6 @@
 
         .press-title {
             font-family: 'Noir', Arial, sans-serif;
-            font-size: 2.5rem;
-            font-weight: 500;
-            text-align: left;
-        }
-
-        .press-content {
-            max-width: 900px; /* or 960px, 900px etc. */
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .press-columns-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 40px;
-            flex-wrap: wrap; /* optional for responsiveness */
-        }
-
-        .press-column {
-            font-family: 'Noir', Arial, sans-serif;
-            flex: 1;
-            min-width: 350px;
-        }
-
-        .column-title {
-            font-family: 'Noir', Arial, sans-serif;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .divider {
-            width: 2px;
-            background-color: #ccc;
-            margin: 0 20px;
-        }
-
-        .logo-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .logo-image {
-            max-width: 400px;
-            height: auto;
-        }
-
-        .divider {
-            width: 1px;
-            background-color: white;
-            margin: 0 2%;
-            height: 100%;
-            align-self: stretch;
-        }
-
-        .column-title {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .column-logo {
-            max-width: 150px; /* or any size that looks good */
-            height: auto;
-            display: block;
-            margin: 0 auto 10px auto; /* centers image and adds space below */
-        }
-
-        .studio-info, .game-info {
-            text-align: left;
-            line-height: 1.6;
-        }
-
-        .press-resources {
-            margin-top: 80px;
-            padding: 0 40px 80px 40px;
-        }
-
-        .resource-section {
-            margin-bottom: 60px;
-        }
-
-        .resource-title {
-            font-family: 'Noir', Arial, sans-serif;
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .resource-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .resource-item {
-            width: 200px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-            .resource-item img {
-                width: 100%;
-                height: auto;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-            }
-
-            .resource-item a {
-                color: #fff;
-                text-decoration: none;
-                display: inline-block;
-                margin-top: 8px;
-                font-size: 0.95rem;
-            }
-
-                .resource-item a:hover {
-                    text-decoration: underline;
-                }
-
-        /* Overlay Gallery Styles */
-        #gallery-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            flex-direction: column;
-        }
-
-            #gallery-overlay.active {
-                display: flex;
-            }
-
-        #gallery-image {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 8px;
-            border: 2px solid #fff;
-            margin-bottom: 20px;
-        }
-
-        .gallery-nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .gallery-arrow {
-            background-color: transparent;
-            border: 2px solid #fff;
-            color: #fff;
-            font-size: 2rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            user-select: none;
-            transition: background-color 0.2s ease;
-        }
-
-            .gallery-arrow:hover {
-                background-color: #fff;
-                color: #030f16;
-            }
-
-        #gallery-close {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 2rem;
-            background: none;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        .site-footer {
-            background-color: #08223c;
-            padding: 10px 20px;
-            position: relative;
-            color: #fff;
-            font-family: 'Noir', Arial, sans-serif;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            min-height: 80px;
-        }
-
-        .footer-logo {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            max-width: 240px;
-            height: auto;
-            line-height: 0;
-        }
     </style>
 </head>
 <body>
@@ -298,40 +87,40 @@
 
     <!-- Press Content -->
     <div class="press-content">
-    <div class="press-header">
-        <h1 class="press-title">PRESS KIT</h1>
-    </div>
-
-    <div class="press-columns-wrapper">
-        <!-- Studio Info Column -->
-        <div class="press-column">
-            <img src="/images/SlapBangDigital_Logo.png" alt="SLAP-BANG! Digital Logo" class="column-logo" />
-            <h2 class="column-title">Studio Info</h2>
-            <div class="studio-info">
-                <p><strong>SLAP-BANG! Digital</strong><br />Based in Belfast, Northern Ireland</p>
-                <p>Website: slapbangdigital.com<br />Email: slapbangdigital@gmail.com</p>
-                <p>
-                    <strong>SLAP-BANG! Digital</strong> is a Belfast-based independent game studio founded in 2024 by Mark Skelton. At <strong>SLAP-BANG!</strong> we aim to create games that are easy to pick up, hard to master, and brought to life with bold, striking visuals. Our focus is on building simple, intuitive core mechanics and exploring them to their fullest potential. We favour shorter, more focused experiences—crafted to deliver a thrilling, memorable ride from start to finish.
-                </p>
-            </div>
+        <div class="press-header">
+            <h1 class="press-title">PRESS KIT</h1>
         </div>
 
-        <div class="divider"></div>
+        <div class="press-columns-wrapper">
+            <!-- Studio Info Column -->
+            <div class="press-column">
+                <img src="/images/SlapBangDigital_Logo.png" alt="SLAP-BANG! Digital Logo" class="column-logo" />
+                <h2 class="column-title">Studio Info</h2>
+                <div class="studio-info">
+                    <p><strong>SLAP-BANG! Digital</strong><br />Based in Belfast, Northern Ireland</p>
+                    <p>Website: slapbangdigital.com<br />Email: slapbangdigital@gmail.com</p>
+                    <p>
+                        <strong>SLAP-BANG! Digital</strong> is a Belfast-based independent game studio founded in 2024 by Mark Skelton. At <strong>SLAP-BANG!</strong> we aim to create games that are easy to pick up, hard to master, and brought to life with bold, striking visuals. Our focus is on building simple, intuitive core mechanics and exploring them to their fullest potential. We favour shorter, more focused experiences—crafted to deliver a thrilling, memorable ride from start to finish.
+                    </p>
+                </div>
+            </div>
 
-        <!-- Game Info Column -->
-        <div class="press-column">
-            <img src="/images/SmashNGrabLogo_TransparentBackground.png" alt="Smash ‘N Grab Logo" class="column-logo" />
-            <h2 class="column-title">Game Info</h2>
-            <div class="game-info">
-                <p><strong>Smash ‘N Grab</strong> is an adrenaline-fuelled, destructive beat ’em up that puts you in control of Smash and Grab, a chaotic duo pulling off heists to devastating effect. Smash is a hulking robot out for justice. Grab is a cunning raccoon chasing wealth. Tethered by a rope, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment. Together, they team up to loot everything in sight!</p>
-                <p>
-                    "They say revenge is a dish best served cold. Smash serves it like a wrecking ball. Me? I prefer mine with a side of diamonds.<br />
-                    The big guy’s got a score to settle — the mob tried to scrap him, and now he’s tearing through their empire one busted door at a time. I’m just along for the ride… or so he thinks. See, while Smash is busy chasing justice, I’m chasing something shinier. Vaults. Safes. Secrets. Every heist gets us closer to the top — to the boss of bosses. But I’m not in this for payback. I’m in this for the payday.<br />
-                    He breaks, I enter. He smashes, I grab. That’s the deal. Just don’t ask what I plan to do when the real prize shows up."
-                </p>
+            <div class="divider"></div>
+
+            <!-- Game Info Column -->
+            <div class="press-column">
+                <img src="/images/SmashNGrabLogo_TransparentBackground.png" alt="Smash ‘N Grab Logo" class="column-logo" />
+                <h2 class="column-title">Game Info</h2>
+                <div class="game-info">
+                    <p><strong>Smash ‘N Grab</strong> is an adrenaline-fuelled, destructive beat ’em up that puts you in control of Smash and Grab, a chaotic duo pulling off heists to devastating effect. Smash is a hulking robot out for justice. Grab is a cunning raccoon chasing wealth. Tethered by a rope, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment. Together, they team up to loot everything in sight!</p>
+                    <p>
+                        "They say revenge is a dish best served cold. Smash serves it like a wrecking ball. Me? I prefer mine with a side of diamonds.<br />
+                        The big guy’s got a score to settle — the mob tried to scrap him, and now he’s tearing through their empire one busted door at a time. I’m just along for the ride… or so he thinks. See, while Smash is busy chasing justice, I’m chasing something shinier. Vaults. Safes. Secrets. Every heist gets us closer to the top — to the boss of bosses. But I’m not in this for payback. I’m in this for the payday.<br />
+                        He breaks, I enter. He smashes, I grab. That’s the deal. Just don’t ask what I plan to do when the real prize shows up."
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="press-resources">
@@ -385,7 +174,6 @@
                 <div class="resource-item"><img src="images/SmashNGrab_GameplayScreenshot_7.png" alt="Screenshot 7" /><a href="images/SmashNGrab_GameplayScreenshot_7.png" download>Download</a></div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Overlay Gallery -->
