@@ -54,6 +54,15 @@
                 color: var(--accent);
             }
 
+        .icon-overlay {
+            position: absolute;
+            left: 40px; /* adjust for desired horizontal offset */
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100px; /* or use max-height/width if needed */
+            z-index: 2;
+        }
+
         .overlay-nav {
             position: absolute;
             top: 20px;
@@ -189,6 +198,7 @@
 <body>
     <header>
         <img src="images/KeyArt_PressPage_Banner.png" alt="Key Art Press Page Banner" />
+        <img src="images/SmashNGrabLogo_Square.png" alt="Smash 'N Grab Icon" class="icon-overlay" />
         <nav class="overlay-nav">
             <div class="nav-left">
                 <a href="index.html">HOME</a>
