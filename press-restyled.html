@@ -64,6 +64,34 @@
             z-index: 2;
         }
 
+        .factsheet-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .factsheet-content {
+            flex: 1 1 60%;
+            min-width: 280px;
+            font-family: 'Noir', Arial, sans-serif;
+        }
+
+        .factsheet-logo {
+            flex: 0 1 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .factsheet-logo img {
+                max-width: 100%;
+                height: auto;
+                max-height: 160px;
+            }
+
         .overlay-nav {
             position: absolute;
             top: 20px;
@@ -215,19 +243,21 @@
     </header>
 
     <main>
-        <section>
-            <h2>Factsheet</h2>
-            <div class="columns">
-                <div class="column">
-                    <p><strong>Developer:</strong><br />SLAP-BANG! Digital<br />Based in Belfast, Northern Ireland</p>
-                    <p><strong>Website:</strong><br />slapbangdigital.com</p>
-                    <p><strong>Email:</strong><br />slapbangdigital@gmail.com</p>
+        <section class="factsheet-section">
+            <div class="factsheet-content">
+                <h2>Factsheet</h2>
+                <div class="columns">
+                    <div class="column">
+                        <p><strong>Developer:</strong><br />SLAP-BANG! Digital<br />Based in Belfast, Northern Ireland</p>
+                        <p><strong>Website:</strong><br />slapbangdigital.com</p>
+                        <p><strong>Email:</strong><br />slapbangdigital@gmail.com</p>
+                    </div>
+                    <!--<div class="column">
+                <p><strong>Release date:</strong><br />TBA</p>
+                <p><strong>Platforms:</strong><br />PC, Xbox, PlayStation, Nintendo</p>
+                <p><strong>Price:</strong><br />TBA</p>
+            </div>-->
                 </div>
-                <!--<div class="column">
-                    <p><strong>Release date:</strong><br />TBA</p>
-                    <p><strong>Platforms:</strong><br />PC, Xbox, PlayStation, Nintendo</p>
-                    <p><strong>Price:</strong><br />TBA</p>
-                </div>-->
             </div>
         </section>
 
@@ -239,7 +269,7 @@
         <section>
             <h2>History</h2>
             <p><b>SLAP-BANG! Digital</b> is a Belfast-based independent game studio founded in 2024 by Mark Skelton. We create games that are easy to pick up, hard to master, and brought to life with bold, striking visuals. Our focus is on building simple, intuitive core mechanics and exploring them to their fullest potential. We favour shorter, more focused experiences—crafted to deliver a thrilling, memorable ride from start to finish.</p>
-            <p>SLAP-BANG! Digital's debut title, <b>Smash 'N Grab</b>, has been brought to life by a talented team with years of experience in the games industry. Development has been made possible thanks to funding support from NI Screen, allowing the team to work on the game over the past few months. Smash 'N Grab is now at the vertical slice stage, with a fully playable level that showcases its core mechanics and bold visual style — art directed by Darren Beattie.'</p>
+            <p>SLAP-BANG! Digital's debut title, <b>Smash 'N Grab</b>, has been brought to life by a talented team with years of experience in the games industry. Development has been made possible thanks to funding support from NI Screen, allowing the team to work on the game over the past few months. Smash 'N Grab is now at the vertical slice stage, with a fully playable level that showcases its core mechanics and bold visual style — art directed by Darren Beattie.</p>
         </section>
 
         <section>
