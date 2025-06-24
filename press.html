@@ -27,15 +27,23 @@
             font-style: normal;
         }
 
-        .banner {
-            background-color: #08223c;
-            color: #fff;
-            padding: 10px 20px;
+        .overlay-nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            position: relative;
-            height: 40px;
-            /*border-bottom: 3px solid #02090d;*/
+            gap: 20px;
+            font-family: 'Noir', Arial, sans-serif;
+            font-weight: 400;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            gap: 20px;
         }
 
         .instagram-icon {
@@ -284,17 +292,17 @@
     </style>
 </head>
 <body>
-
-    <!-- Navigation Banner -->
-    <div class="banner">
-        <a href="https://instagram.com/smashngrabgame" target="_blank">
-            <img src="images/Instagram_Glyph_White.png" alt="Instagram" class="instagram-icon" />
-        </a>
-        <nav class="nav-links">
-            <a href="/">HOME</a>
-            <a href="/press">PRESS</a>
-        </nav>
-    </div>
+    <nav class="overlay-nav">
+        <div class="nav-left">
+            <a href="index.html">HOME</a>
+            <a href="press.html">PRESS</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.instagram.com/smashngrabgame" target="_blank" class="instagram-link">
+                <img src="images/Instagram_Glyph_Yellow.png" alt="Instagram" />
+            </a>
+        </div>
+    </nav>
 
     <!-- Press Content -->
     <div class="press-content">
