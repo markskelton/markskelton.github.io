@@ -221,6 +221,22 @@
                 border-radius: 8px;
                 border: 2px solid white;
             }
+
+        .save-button {
+            margin-top: 20px;
+            background-color: #ffd700;
+            color: #030f16;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            font-family: 'Noir', Arial, sans-serif;
+            transition: background-color 0.2s ease;
+        }
+
+            .save-button:hover {
+                background-color: #ffb400;
+            }
     </style>
 </head>
 <body>
@@ -251,10 +267,10 @@
                         <p><strong>Email:</strong><br />slapbangdigital@gmail.com</p>
                     </div>
                     <!--<div class="column">
-                <p><strong>Release date:</strong><br />TBA</p>
-                <p><strong>Platforms:</strong><br />PC, Xbox, PlayStation, Nintendo</p>
-                <p><strong>Price:</strong><br />TBA</p>
-            </div>-->
+                        <p><strong>Release date:</strong><br />TBA</p>
+                        <p><strong>Platforms:</strong><br />PC, Xbox, PlayStation, Nintendo</p>
+                        <p><strong>Price:</strong><br />TBA</p>
+                    </div>-->
                 </div>
             </div>
 
@@ -290,7 +306,7 @@
         </section>-->
 
         <section>
-            <h2>Images</h2>
+            <h2>Screenshots</h2>
             <div class="gallery">
                 <img src="images/SmashNGrab_GameplayScreenshot_1.png" alt="Screenshot 1" onclick="openLightbox(this.src)" />
                 <img src="images/SmashNGrab_GameplayScreenshot_2.png" alt="Screenshot 2" onclick="openLightbox(this.src)" />
@@ -355,12 +371,26 @@
         <img src="" alt="Expanded Screenshot" />
     </div>
 
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Expanded Screenshot" />
+        <a id="lightbox-save" href="" download class="save-button">Save Image</a>
+    </div>
+
     <script>
-    function openLightbox(src) {
-      const lightbox = document.getElementById('lightbox');
-      lightbox.querySelector('img').src = src;
-      lightbox.style.display = 'flex';
-    }
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-img');
+            const saveBtn = document.getElementById('lightbox-save');
+
+            image.src = src;
+            saveBtn.href = src;
+
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
     </script>
 </body>
 </html>
