@@ -182,7 +182,7 @@
         /* Mobile styles */
         @media (max-width: 767px) {
             .overlay-nav {
-                /*gap: 10px;*/
+                gap: 0px;
                 padding: 0 10px;
             }
 
@@ -190,6 +190,13 @@
                     font-size: 1rem;
                     padding: 0px 8px;
                 }
+
+            .nav-left,
+            .nav-right {
+                display: flex;
+                gap: 0px;
+                flex-wrap: wrap;
+            }
 
             .controls-text,
             .moves-text,
