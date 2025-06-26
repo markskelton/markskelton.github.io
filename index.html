@@ -182,39 +182,14 @@
         /* Mobile styles */
         @media (max-width: 767px) {
             .overlay-nav {
-                flex-direction: column;
-                align-items: flex-start;
                 gap: 10px;
-                top: 10px;
-                left: 10px;
-                right: 10px;
+                padding: 0 10px;
             }
 
                 .overlay-nav a {
                     font-size: 1rem;
-                    padding: 6px 10px;
+                    padding: 4px 8px;
                 }
-
-            .controls-section,
-            .moves-section,
-            .destruction-section {
-                flex-direction: column;
-                padding: 30px 20px;
-                gap: 20px;
-            }
-
-            .controls-heading,
-            .moves-heading,
-            .destruction-heading {
-                width: 100%;
-                height: auto;
-                padding: 20px 0;
-                font-size: 1.2rem;
-            }
-
-            .destruction-text {
-                text-align: left;
-            }
 
             .controls-text,
             .moves-text,
@@ -222,16 +197,28 @@
                 font-size: 1.1rem;
             }
 
-            .controls-video,
-            .destruction-video,
-            .moves-video {
-                text-align: center;
+            .controls-heading h2,
+            .moves-heading h2,
+            .destruction-heading h2 {
+                font-size: 1.2rem;
+            }
+
+            .controls-section,
+            .moves-section,
+            .destruction-section {
+                padding: 30px 20px;
+                gap: 20px;
             }
 
             .game-description {
-                font-size: 1.1rem;
-                padding: 30px 20px;
+                font-size: 1rem;
+                padding: 20px;
             }
+
+            .instagram-link img {
+                height: 1.5rem;
+            }
+        }
         }
     </style>
 </head>
