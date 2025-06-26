@@ -6,7 +6,6 @@
     <link rel="icon" href="images/android-chrome-512x512.png?" type="image/png" />
     <title>SLAP-BANG! Digital</title>
     <style>
-        /* Base styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -17,17 +16,14 @@
             font-family: 'Noir';
             src: url('fonts/Noir_regular.otf') format('truetype');
             font-weight: 400;
-            font-style: normal;
         }
 
         @font-face {
             font-family: 'Noir';
             src: url('fonts/Noir_medium.otf') format('truetype');
             font-weight: 500;
-            font-style: normal;
         }
 
-        /* Key art and navigation */
         .keyart-container {
             position: relative;
             display: inline-block;
@@ -50,12 +46,14 @@
             gap: 20px;
             font-family: 'Noir', Arial, sans-serif;
             font-weight: 400;
+            flex-wrap: wrap;
         }
 
         .nav-left,
         .nav-right {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .overlay-nav a {
@@ -83,7 +81,6 @@
                 display: block;
             }
 
-        /* Game description */
         .game-description {
             background-color: #ffc335;
             color: #fff;
@@ -94,14 +91,6 @@
             line-height: 1.6;
         }
 
-        @media (min-width: 768px) {
-            .game-description {
-                font-size: 1.5rem;
-                padding: 60px 80px;
-            }
-        }
-
-        /* Shared section styles */
         .controls-section,
         .moves-section,
         .destruction-section {
@@ -135,8 +124,6 @@
         .destruction-heading {
             width: 400px;
             height: 126px;
-            padding: 0;
-            margin: 0;
             background-size: auto;
             background-repeat: no-repeat;
             background-position: center;
@@ -162,10 +149,8 @@
             .controls-heading h2,
             .moves-heading h2,
             .destruction-heading h2 {
-                padding: 0;
                 margin: 0;
                 font-size: 1.5rem;
-                font-weight: 500;
             }
 
         .destruction-text {
@@ -179,10 +164,6 @@
             text-align: right;
         }
 
-        .destruction-video {
-            text-align: right;
-        }
-
             .controls-video video,
             .destruction-video video,
             .moves-video video {
@@ -193,9 +174,64 @@
 
         footer {
             text-align: right;
-            padding: 20px 20px;
+            padding: 20px;
             font-size: 0.9rem;
             color: var(--text-light);
+        }
+
+        /* Mobile styles */
+        @media (max-width: 767px) {
+            .overlay-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+            }
+
+                .overlay-nav a {
+                    font-size: 1rem;
+                    padding: 6px 10px;
+                }
+
+            .controls-section,
+            .moves-section,
+            .destruction-section {
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 20px;
+            }
+
+            .controls-heading,
+            .moves-heading,
+            .destruction-heading {
+                width: 100%;
+                height: auto;
+                padding: 20px 0;
+                font-size: 1.2rem;
+            }
+
+            .destruction-text {
+                text-align: left;
+            }
+
+            .controls-text,
+            .moves-text,
+            .destruction-text {
+                font-size: 1.1rem;
+            }
+
+            .controls-video,
+            .destruction-video,
+            .moves-video {
+                text-align: center;
+            }
+
+            .game-description {
+                font-size: 1.1rem;
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
