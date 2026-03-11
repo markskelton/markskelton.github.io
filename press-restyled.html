@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Press Kit – SLAP-BANG! Digital</title>
+    <link rel="icon" href="images/android-chrome-512x512.png" type="image/png" />
+    <style>
+        @font-face {
+            font-family: 'Noir';
+            src: url('fonts/Noir_regular.otf') format('truetype');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: 'Noir';
+            src: url('fonts/Noir_medium.otf') format('truetype');
+            font-weight: 500;
+        }
+
+        :root {
+            --background: #030f16;
+            --foreground: #fff;
+            --accent: #ffcc00;
+            --text-light: #aaa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'Noir', Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 0;
+            text-align: center;
+        }
+
+            header img {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                color: var(--accent);
+            }
+
+        .icon-overlay {
+            position: absolute;
+            left: 40px; /* adjust for desired horizontal offset */
+            top: 50%;
+            transform: translateY(-50%);
+            height: 200px; /* or use max-height/width if needed */
+            width: auto;
+            z-index: 2;
+        }
+
+        .factsheet-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .factsheet-content {
+            flex: 1 1 60%;
+            min-width: 280px;
+            font-family: 'Noir', Arial, sans-serif;
+        }
+
+        .factsheet-logo {
+            flex: 0 1 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .factsheet-logo img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+        .overlay-nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            font-family: 'Noir', Arial, sans-serif;
+            font-weight: 400;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .overlay-nav a {
+            color: #ffc335;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+
+            .overlay-nav a:hover {
+                opacity: 0.7;
+            }
+
+        .instagram-link {
+            display: flex;
+            padding: 0;
+        }
+
+            .instagram-link img {
+                height: 1.8rem;
+                width: auto;
+                display: block;
+            }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .column {
+            flex: 1 1 300px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+            .gallery img {
+                width: 100%;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.03);
+                }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+            .download-link:hover {
+                text-decoration: underline;
+            }
+
+        .light-text {
+            color: var(--text-light);
+        }
+
+        footer {
+            text-align: right;
+            padding: 20px 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Lightbox styles */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+            #lightbox img {
+                max-width: 90%;
+                max-height: 80%;
+                border-radius: 8px;
+                border: 2px solid white;
+            }
+
+        .save-button {
+            margin-top: 10px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            align-self: center;
+            vertical-align: middle;
+            background-color: #ffd700;
+            color: #030f16;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            font-family: 'Noir', Arial, sans-serif;
+            transition: background-color 0.2s ease;
+        }
+
+            .save-button:hover {
+                background-color: #ffb400;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/KeyArt_PressPage_Banner_1920.png" alt="Key Art Press Page Banner" />
+        <nav class="overlay-nav">
+            <div class="nav-left">
+                <a href="index.html">HOME</a>
+                <a href="press-restyled.html">PRESS</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://www.instagram.com/smashngrabgame" target="_blank" class="instagram-link">
+                    <img src="images/Instagram_Glyph_Yellow.png" alt="Instagram" />
+                </a>
+            </div>
+        </nav>
+        <h1>Press Kit</h1>
+    </header>
+
+    <main>
+        <section class="factsheet-section">
+            <div class="factsheet-content">
+                <h2>Factsheet</h2>
+                <div class="columns">
+                    <div class="column">
+                        <p><strong>Developer:</strong><br />SLAP-BANG! Digital<br />Based in Belfast, Northern Ireland</p>
+                        <p><strong>Website:</strong><br />slapbangdigital.com</p>
+                        <p><strong>Email:</strong><br />info@slapbangdigital.com</p>
+                    </div>
+                    <!--<div class="column">
+                    <p><strong>Release date:</strong><br />TBA</p>
+                    <p><strong>Platforms:</strong><br />PC, Xbox, PlayStation, Nintendo</p>
+                    <p><strong>Price:</strong><br />TBA</p>
+                </div>-->
+                </div>
+            </div>
+
+            <div class="factsheet-logo">
+                <img src="images/SmashNGrabLogo_Square.png" alt="Smash 'N Grab Logo">
+            </div>
+        </section>
+
+        <section>
+            <h2>Description</h2>
+            <p><b>Smash ‘N Grab</b> is an adrenaline-fuelled, destructive beat ’em up that puts you in control of Smash and Grab, a chaotic duo pulling off heists to devastating effect. Smash is a hulking robot out for justice. Grab is a cunning raccoon chasing wealth. Tethered by a rope, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment. Together, they team up to loot everything in sight.</p>
+        </section>
+
+        <section>
+            <h2>History</h2>
+            <p><b>SLAP-BANG! Digital</b> is a Belfast-based independent game studio founded in 2024 by Mark Skelton. We create games that are easy to pick up, hard to master, and brought to life with bold, striking visuals. Our focus is on building simple, intuitive core mechanics and exploring them to their fullest potential. We favour shorter, more focused experiences—crafted to deliver a thrilling, memorable ride from start to finish.</p>
+            <p>SLAP-BANG! Digital's debut title, Smash 'N Grab, has been brought to life by a talented team with years of experience in the games industry. Development has been made possible thanks to funding support from NI Screen, allowing the team to work on the game over the past few months. Smash 'N Grab is now at the vertical slice stage, with a fully playable level that showcases its core mechanics and bold visual style — art directed by Darren Beattie.</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Control a chaotic duo—move Smash with the left stick, throw Grab with the right</li>
+                <li>Tethered by a rope, Smash can launch Grab to reel enemies in, seize valuables, and grapple through the environment</li>
+                <li>Smash your way through breakable environments where destruction is rewarded</li>
+                <li>Striking visuals inspired by The Incredibles and Samurai Jack</li>
+            </ul>
+        </section>
+
+        <!--<section>
+        <h2>Videos</h2>
+        <p>[Embed trailer links or leave space for YouTube embeds]</p>
+    </section>-->
+
+        <section>
+            <h2>Trailer</h2>
+
+            <!-- Embedded YouTube Trailer -->
+            <div style="max-width: 640px; margin: 0 auto 20px;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://www.youtube.com/embed/7qP8CNj8tR8"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Download Link to Google Drive Folder -->
+            <p style="text-align: center;">
+                <a class="save-button" href="https://drive.google.com/file/d/1YdifWFbHYPUIpzFqv1b-lJL2pa8xZd06/view?usp=sharing" target="_blank">
+                    Download Press Trailer (MP4 & MOV)
+                </a>
+            </p>
+        </section>
+
+        <section>
+            <h2>Screenshots</h2>
+            <div class="gallery">
+                <img src="images/SmashNGrab_GameplayScreenshot_1.png" alt="Screenshot 1" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_CinematicScreenshot_1.png" alt="Screenshot 1" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_GameplayScreenshot_2.png" alt="Screenshot 2" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_CinematicScreenshot_2.png" alt="Screenshot 1" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_GameplayScreenshot_3.png" alt="Screenshot 3" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_CinematicScreenshot_3.png" alt="Screenshot 1" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_GameplayScreenshot_4.png" alt="Screenshot 4" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_GameplayScreenshot_5.png" alt="Screenshot 5" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_GameplayScreenshot_6.png" alt="Screenshot 6" onclick="openLightbox(this.src)" />
+                <img src="images/SmashNGrab_GameplayScreenshot_7.png" alt="Screenshot 7" onclick="openLightbox(this.src)" />
+            </div>
+        </section>
+
+        <section>
+            <h2>Game Logos & Key Art</h2>
+            <div class="gallery">
+                <div>
+                    <img src="images/SmashNGrabLogo_TransparentBackground.png" alt="Game Logo" onclick="openLightbox(this.src)" />
+                </div>
+                <div>
+                    <img src="images/SmashNGrabLogo_Square.png" alt="Game Logo" onclick="openLightbox(this.src)" />
+                </div>
+                <div>
+                    <img src="images/KeyArt_16by9_WithTitle.png" alt="Key Art" onclick="openLightbox(this.src)" />
+                </div>
+                <div>
+                    <img src="images/KeyArt_16by9_NoTitle.png" alt="Key Art" onclick="openLightbox(this.src)" />
+                </div>
+                <div>
+                    <img src="images/KeyArt_WithTitle.png" alt="Key Art" onclick="openLightbox(this.src)" />
+                </div>
+                <div>
+                    <img src="images/KeyArt_NoTitle.png" alt="Key Art" onclick="openLightbox(this.src)" />
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Company Logos</h2>
+            <div class="gallery">
+                <div>
+                    <img src="images/SlapBangDigital_Logo.png" alt="Game Logo" onclick="openLightbox(this.src)" />
+                </div>
+                <div>
+                    <img src="images/SlapBangDigital_Icon.png" alt="Game Logo" onclick="openLightbox(this.src)" />
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a class="save-button" href="https://drive.google.com/file/d/1fcvggjk3MTkxgIx5r2AMVGSEfHtVf_V0/view?usp=drive_link">
+                Download All Media (ZIP)
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <img src="images/SlapBangDigital_Icon.png" alt="SLAP-BANG! Digital Icon" width="60" height="60" />
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Expanded Screenshot" />
+        <a id="lightbox-save" href="" download class="save-button">Save</a>
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-img');
+            const saveBtn = document.getElementById('lightbox-save');
+
+            image.src = src;
+            saveBtn.href = src;
+
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
